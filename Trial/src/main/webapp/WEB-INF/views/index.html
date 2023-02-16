@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Top10</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <div th:class="header">
+        <div th:class="header-item">
+            <span th:href="@{/profile}">Profile</span>
+        </div>
+        <div th:class="header-item">
+            <span>Top 10</span>
+        </div>
+        <div th:class="header-item">
+            <span>Flop 10</span>
+        </div>
+        <div th:class="header-item">
+            <span>Last</span>
+        </div>
+    </div>
+    <div th:class="quote-container">
+        <div th:class="random-quote">
+            <span th:text="${randomQuote}">Random quote</span>
+        </div>
+        <div th:class="log-in-container">
+            <form th:class="form" action="">
+                <label for="login"></label>
+                <input type="text" id="login" name="login" placeholder="Login:">
+                <label for="password"></label>
+                <input type="text" id="password" name="password" placeholder="Password:">
+                <input type="submit" value="Sign in">
+            </form>
+            <p>Create an account!</p>
+            <br/>
+            <hr/>
+            <form th:action="@{/quotes/new}">
+                <input type="submit" value="Create new quote">
+            </form>
+        </div>
+    </div>
+    <div class="post-container" th:each="quote : ${quotes}">
+        <div class="post">
+            <div class="post-text" th:text="${quote.getText() + ' - score: ' + quote.getScore()}">quote</div>
+            <div class="post-helpers">
+                <div>
+                    <button>+</button>
+                    <button>-</button>
+                </div>
+                <form th:action="@{/quotes/{id}/edit(id=${quote.getId()})}">
+                    <input type="submit" value="Update">
+                </form>
+                <form th:method="DELETE" th:action="@{/quotes/{id}(id = ${quote.getId()})}">
+                    <input type="submit" value="Delete">
+                </form>
+                <span th:text="${'posted by ' + quote.getAuthor()}">author</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin: 10px 0 0 0;
+}
+.header {
+    width: 1024px;
+    height: 80px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 0 15px 0;
+}
+.header-item {
+    height: inherit;
+    width: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+}
+.header-item > span {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.quote-container {
+    width: 1024px;
+    height: 200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.random-quote {
+    width: 780px;
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid gray;
+}
+
+.log-in-container {
+    width: 200px;
+    height: 200px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.log-in-container > form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+}
+.post-container {
+    width: 1024px;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0 0 0;
+}
+.post {
+    width: 760px;
+    height: 50px;
+    border: 1px solid gray;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px
+}
+.post-helpers {
+    display: flex;
+    justify-content: space-between;
+}
+.update-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-content: center;
+}
+.border {
+    position: relative;
+    width: 80vmin;
+    border: solid red 5px;
+    box-sizing: border-box;
+}
+.content {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

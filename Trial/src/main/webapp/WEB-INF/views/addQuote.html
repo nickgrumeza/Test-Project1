@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add quote</title>
+    <link th:href="@{/css/styles.css}" rel="stylesheet">
+</head>
+<body>
+    <form th:method="POST" th:action="@{/quotes/new}" th:object="${quote}">
+        <div class="update-container">
+            <div class="border">
+                <div class="content">
+                    <label for="text">Enter quote</label>
+                    <input type="text" th:field="*{text}" id="text"/>
+                    <br/>
+                    <label for="author">Enter author</label>
+                    <input type="text" th:field="*{author}" id="author">
+                    <br/>
+                    <hr/>
+                    <input type="submit" value="Create"/>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
